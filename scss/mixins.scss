@@ -1,0 +1,20 @@
+@mixin link($link, $hover, $visited, $actived) {
+    a{
+        color: $link;
+        text-decoration: none;
+        &:hover{
+            color: $hover; 
+            text-decoration: none;
+        }
+
+        &:visited{
+            color: $visited; 
+            text-decoration: none;
+        }
+
+        &:active{
+            color: $actived; 
+            text-decoration: none;
+        }
+    }
+}

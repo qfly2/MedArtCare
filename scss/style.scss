@@ -1,0 +1,1313 @@
+@import "variables.scss";
+@import "mixins.scss";
+@font-face {
+    font-family: Philosopher-Bold;
+    src:url('../src/fonts/Philosopher-Bold.ttf');
+}
+@font-face {
+    font-family: Philosopher;
+    src:url('../src/fonts/Philosopher-Regular.ttf');
+}
+@include link($color,$hoverColor,$color,$color);
+
+
+body{
+    font-family: Philosopher;
+    padding: 0;
+    margin: 0;
+}
+
+body.lock{
+    overflow: hidden;
+}
+
+.container{
+    width: 100%;
+    max-width: 1146px;
+    margin: 0 auto;
+}
+
+.rotation{
+    width: 100%;
+    animation: spin 12s linear 0s infinite;
+}
+
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+
+//-----------Header------------
+.header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    background: $bgColor;
+}
+.header__content{
+    display: flex;
+    padding: 23px 0;
+    justify-content: space-between;
+}
+
+.navigation__icon{
+    display: none;
+}
+
+.logo{
+    @include link(#133A40,#133A40,#133A40,#133A40);
+}
+
+.logo__link{
+    font-family: Philosopher-Bold;
+    font-size: 20px;
+}
+
+.navigation{
+    width: 777px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.preview{
+    background-image: url(../src/img/header_backgraund.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 650px;
+    background-size: 100%;
+    z-index: 0;
+}
+
+.preview__container{
+    position: relative;
+    z-index: 2;
+    height: 650px;
+}
+
+.preview__gradient{
+    position: absolute;
+    width: 100%;
+    height: 650px;
+    background: linear-gradient(5.89deg, #2D6C76 -16.34%, rgba(45, 108, 118, 0) 95.32%);
+    z-index: 1;
+}
+
+.preview__title{
+    font-size: 120px;
+    color: $secondaryColor;
+    position: absolute;
+    margin: 0;
+    left: 0px;
+    bottom: 134px;
+    z-index: 2;
+}
+
+//-----------About company------------
+
+.information{
+    background: $secondaryBgColor;
+}
+
+.information__content{
+    padding-top: 180px;
+    padding-bottom: 60px;
+}
+
+.information__text{
+    font-size: 68px;
+    line-height: 109.8%;
+    color: $secondaryColor;
+    margin-bottom: 60px;
+}
+
+.quotes{
+    color: $quotesColor;
+}
+
+.information__phone-link{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    margin-left: auto;
+}
+
+.phone-link__eclipse{
+    position: absolute;
+}
+.phone-link__main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background: #49CBCB;
+    margin: auto;
+    img{
+        margin: auto;
+    }
+}
+
+//-----------Explanation------------
+
+.explanation{
+
+}
+
+.explanation__content{
+    position: relative;
+    display: flex;
+    justify-content: end;
+    padding: 130px 0;
+}
+
+
+.explanation__title{
+    position: absolute;
+    font-size: 68px;
+    line-height: 76px;
+    color: #133A40;
+    width: 668px;
+    left: 0;
+}
+
+.explanation__information{
+    width: 58%;
+}
+.explanation__link{
+    display: block;
+    width: 130px;
+    height: 130px;
+    margin: 0 auto;    
+}
+
+
+.explanation__text{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    p{
+        width: 43%;
+        font-size: 16px;
+        line-height: 150%;
+    }
+}
+
+//-----------Benefits------------
+
+.benefits{
+    position: relative;
+
+    &__container{
+        display: flex;
+        z-index: 1;
+    }
+    
+    &__about{
+        background: $secondaryBgColor;
+        width: 50%;
+        display: flex;
+        align-items: center;
+    }
+    
+    &__background{
+        position: absolute;
+        z-index: 0;
+        width: 50%;
+        height: 100%;
+        background-color: $secondaryBgColor;
+    }
+    
+    &__title{
+        margin: 0;
+        font-size: 68px;
+        line-height: 76px;
+        color: $secondaryColor;
+        z-index: 1;
+    }
+    
+    &__content{
+        width: 50%;
+    }
+    
+    &__item{
+        display: flex;
+        margin-top: 50px;
+        &:last-child{
+            margin-bottom: 50px;
+        }
+    }
+    
+    &__number{
+        font-size: 68px;
+        line-height: 76px;
+        color: #2D6C76;
+        width: 172px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    &__text{
+        font-size: 20px;
+        line-height: 150%;
+        padding-top: 20px;
+    }
+}
+
+
+
+//-----------About company------------
+
+.about-company{
+    position: relative;
+
+    &__background{
+        position: absolute;
+        background-image: url(../src/img/about-company_background.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: 435px;
+        background-size: 100%;
+        width: 33%;
+        right: 0;
+    }
+    
+    &__container{
+        padding-top: 100px;
+        padding-bottom: 60px;
+        position: relative;
+    }
+    
+    &__title{
+        font-size: 120px;
+        line-height: 134px;
+        color: #133A40;
+        margin: 0;
+        
+    }
+    
+    &__info{
+        font-size: 42px;
+        line-height: 47px;
+        width: 600px;
+        @include link($quotesColor,$quotesColor,$quotesColor,$quotesColor);
+    }
+    
+    &__img{
+        position: absolute;
+        top: 100px;
+        left: 465px;
+    }
+}
+
+
+
+.recommendations{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    &__container{
+        display: flex;
+    }
+    
+    &__media{
+        margin-right: 60px;
+    }
+    
+    &__content{
+        
+    }
+    &__item{
+        display: flex;
+        margin-bottom: 50px;
+    }
+    
+    &__point{
+        width: 8px;
+        height: 8px;
+        border: 2px solid $quotesColor;
+        border-radius: 50%;
+        margin-right: 20px;
+        margin-top: 5px;
+        
+    }
+    
+    &__item_text{
+        font-size: 16px;
+        line-height: 150%;
+        box-sizing: border-box;
+        display: -webkit-box;
+    }
+
+}
+
+
+
+.propositions{
+
+    &__img{
+        background-image: url(../src/img/propositions_background.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: 544px;
+        background-size: 100%;
+    }
+    
+    &__container{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-top: 100px;
+        
+    }
+
+    &__item{
+        display: flex;
+        width: 45%;
+        margin-bottom: 100px;
+    }
+    
+    &__header{
+        background: $secondaryBgColor;
+    }
+    
+    &__title{
+        font-size: 68px;
+        margin: 0px;
+        color: $secondaryColor;
+        padding: 40px 0;
+    }
+
+    &__info{
+        font-size: 20px;
+        line-height: 150%;
+    }
+
+    &__icon{
+        margin-right: 50px;
+        img{
+
+        }
+    }
+}
+
+.contact{
+    background: $secondaryBgColor;
+    padding: 60px 0;
+    &__container{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__content{
+        display: flex;
+        margin-top: 35px;
+
+    }
+
+    &__title{
+        margin: 0;
+        font-size: 68px;
+        line-height: 76px;
+        color: $secondaryColor;
+    }
+
+    &__item{
+        font-size: 16px;
+        line-height: 150%;
+        color: $secondaryColor;
+        width: 290px;
+        margin-right: 50px;
+        display: flex;
+        @include link($secondaryColor,$secondaryColor,$secondaryColor,$secondaryColor);
+    }
+
+    &__icon{
+        display: block;
+        margin-right: 30px;
+        font-size: 24px;
+    }
+
+    &__icon_map{
+       
+    }
+
+    &__icon__mail{
+    }
+
+    
+}
+
+.footer{
+    padding: 20px 0;
+    
+    &__container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo{
+
+    }
+
+    &__text{
+
+    }
+}
+
+@media screen and (max-width: 1200px) {
+
+    .container{
+        max-width: 970px;
+    }
+
+    .information{
+        &__text{
+            font-size: 50px;
+        }
+
+        &__content{
+            padding-top: 100px;
+        }
+    }
+
+    .explanation__title{
+        font-size: 59px;
+    }
+
+    .benefits__title{
+        font-size: 60px;
+    }
+
+    .about-company{
+        &__title{
+            font-size: 100px;
+        }
+
+        &__info {
+            font-size: 37px;
+            line-height: 47px;
+            width: 480px;
+        }
+
+        &__img{
+            left: 404px;
+        }
+    }
+
+    .propositions__img{
+        height: 450px;
+    }
+
+    .propositions__item{
+        margin-bottom: 75px;
+    }
+}
+
+@media screen and (max-width: 996px) {
+    .container{
+        max-width: 680px;
+    }
+
+    .header{
+        &__content{
+            display: block;
+        }
+    }
+
+    .header__logo{
+       text-align: center;
+       margin-bottom: 20px;
+    }
+
+    .navigation{
+        width: 100%;
+    }
+
+    .preview{
+        height: 475px;
+
+        &__gradient{
+            height: 475px;
+        }
+
+        &__container{
+            height: 475px;
+        }
+        
+        &__title{
+            font-size: 85px;
+            bottom: 70px;
+        }
+    }
+
+    .information{
+
+        &__content{
+            padding-top: 70px;
+        }
+
+        &__text{
+            font-size: 37px;
+            margin-bottom: 30px;
+        }
+
+        &__phone-link{
+            width: 80px;
+            height: 80px;
+        }
+    }   
+
+    .phone-link__eclipse{
+        width: 100%;
+    }
+    .phone-link__main{
+        width: 60px;
+        height: 60px;
+        img{
+            width: 30px;
+        }
+    }
+    .explanation{
+
+        &__content{
+            flex-direction: column;
+            padding: 70px 0;
+        }
+
+        &__title{
+            position: unset;
+            width: 100%;
+            text-align: center;
+            font-size: 54px;
+            margin: 0;
+            margin-bottom: 30px;
+        }
+
+        &__information{
+            width: 100%;
+        }
+    }
+
+    .benefits{
+        &__container{
+            flex-direction: column;
+        }
+
+        &__background{
+            width: 100%;
+            height: 252px;
+        }
+
+        &__about{
+            width: 100%;
+            padding: 0;
+            height: 252px;
+            align-items: center;
+        }
+
+        &__title{
+            text-align: center;
+        }
+        
+        &__content {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        &__item{
+            width: 47%;
+            margin-top: 30px;
+        }
+    }
+
+    .about-company{
+        &__container{
+            padding-top: 0;
+            padding-bottom: 30px;
+        }
+
+        &__title{
+            font-size: 80px;
+        }
+
+        &__info{
+            font-size: 35px;
+            line-height: 130%;
+            width: 420px;
+        }
+
+        &__img{
+            width: 186px;
+            height: 186px;
+            left: 371px;
+            top: 77px;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &__background{
+            display: none;
+        }
+    }
+
+    .recommendations{
+        &__container{
+            flex-direction: column;
+        }
+
+        &__media{
+            width: 100%;
+            height: 300px;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &__content{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        &__item{
+            width: 47%;
+            margin-bottom: 0;
+            margin-top: 40px;
+        }
+
+    }
+
+    .propositions{
+        &__img{
+            height: 296px;
+        }
+
+        &__container{
+            padding-top: 50px;
+        }
+
+        &__title{
+            font-size: 45px;
+            text-align: center;
+        }
+
+        &__item{
+            margin-bottom: 35px;
+        }
+
+        &__icon{
+            margin-right: 20px;
+            img{
+                width: 70px;
+            }
+        }
+
+        &__info{
+            font-size: 16px;
+        }
+    }
+
+    .contact{
+
+        &__container{
+            flex-direction: column;
+        }
+
+        &__title{
+
+        }
+
+        &__content{
+
+        }
+
+        &__item{
+
+        }
+    }
+}
+
+@media screen and (max-width: 700px){
+    .container{
+        max-width: 480px;
+        
+    }
+
+    .header__content{
+        display: flex;
+    }
+
+    .logo{
+        z-index: 20;
+    }
+
+    .header__logo{
+        text-align: left;
+        margin-bottom: 0;
+     }
+
+    .navigation{
+        display: block;
+        position: fixed;
+        top: 0;
+        left: -117%;
+        width: 100%;
+        height: 100%;
+        background: #2D6C76;
+        opacity: 0.9;
+        padding: 100px 30px 30px 30px;
+        transition: left 0.3s ease 0s;
+
+        &::before{
+            content: " ";
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            height: 70px;
+            background-color: #fff;
+            
+        }
+
+        &__link,
+        &__link:visited{
+            display: block;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: $secondaryColor;
+        }
+    }
+
+    .navigation._active{
+        left: 0;
+    }
+
+    .menu__icon{
+        display: block;
+        z-index: 5;
+        position: relative;
+        width: 38px;
+        height: 26px;
+        cursor: pointer;
+
+        &::before,
+        &::after,
+        span{
+            left: 0;
+            position: absolute;
+            height: 10%;
+            width: 100%;
+            transition: all 0.3s ease 0s;
+            background-color: #000;
+        }
+
+        &::before,
+        &::after{
+            content: "";
+        }
+
+        &::before{
+            top: 0;
+        }
+
+        &::after{
+            bottom: 0;
+        }
+
+        span{
+            top: 50%;
+            transform: scale(1) translate(0px, -50%);
+        }
+
+    }
+
+    .menu__icon._active{
+        span{
+            transform: scale(0) translate(0px, -50%);
+        }
+
+        &::before{
+            top: 50%;
+            transform: rotate(-45deg) translate(0px, -50%);
+        }
+
+        &::after{
+            bottom: 50%;
+            transform: rotate(45deg) translate(0px, 50%);
+        }
+    }
+
+    .preview{
+        height: 330px;
+
+        &__gradient{
+            height: 331px;
+        }
+
+        &__container{
+            height: 330px;
+        }
+        
+        &__title{
+            font-size: 65px;
+            bottom: 50px;
+        }
+    }
+
+    .information{
+
+        &__content{
+            padding-top: 50px;
+        }
+
+        &__text{
+            font-size: 31px;
+        }
+    }
+
+    .explanation{
+
+        &__content{
+            padding: 50px 0;
+        }
+
+        &__title{
+            font-size: 40px;   
+            line-height: 140%;
+        }
+
+        &__information{
+            width: 100%;
+        }
+
+        &__text{
+            p{
+                font-size: 13px;
+            }
+            
+        }
+    }
+
+    .benefits{
+        &__container{
+
+        }
+
+        &__background{
+            height: 200px;
+        }
+
+        &__about{
+            height: 200px;
+        }
+
+        &__title{
+            font-size: 38px;
+            line-height: 140%;
+        }
+        
+        &__content {
+            width: 100%;
+            display: block;
+        }
+
+        &__number{
+            font-size: 55px;
+            width: 115px;
+        }
+
+        &__text{
+            font-size: 17px;
+        }
+
+        &__item{
+            width: 100%;
+            margin-top: 30px;
+            &:last-child{
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .about-company{
+        &__container{
+            padding-bottom: 10px;
+        }
+
+        &__title{
+            font-size: 62px;
+        }
+
+        &__info{
+            font-size: 24px;
+            width: 100%;
+        }
+
+        &__img{
+            width: 130px;
+            height: 130px;
+            left: 306px;
+            top: 11px;
+        }
+    }
+
+    .recommendations{
+        &__content{
+            display: block;
+        }
+
+        &__item{
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        &__item_text{
+            font-size: 14px;
+        }
+
+    }
+
+    .propositions{
+        &__img{
+            height: 209px;
+        }
+
+        &__container{
+            padding-top: 50px;
+            display: block;
+        }
+
+        &__title{
+            font-size: 45px;
+            text-align: center;
+        }
+
+        &__item{
+            margin-bottom: 35px;
+            width: 100%;
+        }
+
+        &__icon{
+            margin-right: 20px;
+            img{
+                width: 70px;
+            }
+        }
+
+        &__info{
+            font-size: 16px;
+        }
+    }
+
+    .contact{
+        padding: 30px 0;
+        &__container{
+            flex-direction: column;
+        }
+
+        &__title{
+            font-size: 58px;
+        }
+
+        &__content{
+            margin-top: 23px;
+        }
+
+        &__item{
+            font-size: 14px;
+            margin-right: 0;
+            width: unset;
+        }
+
+        &__icon{
+            margin-right: 23px;
+        }
+    }
+    
+
+}
+
+@media screen and (max-width: 500px){
+    .container{
+        width: 100%;
+    }
+
+    .header{
+        padding-left: $mobilePadding;
+        padding-right: $mobilePadding;
+        
+        &__content{
+            padding: 10px 0;
+        }
+    }
+
+    .menu__icon{
+        margin-right: 45px;
+        width: 30px;
+    }
+
+    .navigation{
+        padding-left: 15px;
+        padding-top: 60px;
+    }
+
+    .navigation::before{
+        height: 43px;
+    }
+
+    .preview{
+        height: 215px;
+
+        &__gradient{
+            height: 216px;
+        }
+
+        &__container{
+            height: 215px;
+        }
+        
+        &__title{
+            font-size: 39px;
+            bottom: 50px;
+            left: 20px;
+        }
+    }
+
+    .information{
+        padding-left: $mobilePadding;
+        padding-right: $mobilePadding;
+        &__content{
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+        &__text{
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        &__phone-link{
+            width: 47px;
+            height: 47px;
+        }
+    }
+
+    .phone-link__main{
+        width: 34px;
+        height: 34px;
+        img{
+            width: 15px;
+        }
+    }
+
+    .explanation{
+        padding-left: $mobilePadding;
+        padding-right: $mobilePadding;
+        &__content{
+            padding: 30px 0;
+        }
+
+        &__title{
+            font-size: 23px;   
+            width: 280px;
+            margin: 0 auto;
+            margin-bottom: 15px;
+        }
+
+        &__link{
+            width: 100px;
+            height: 100px;
+        }
+        &__text{
+            display: block;
+            p{
+                width: 100%;
+            }
+            
+        }
+    }
+
+    .benefits{
+        
+        &__container{
+
+        }
+
+        &__background{
+            height: 200px;
+        }
+
+        &__about{
+            height: 200px;
+            
+        }
+
+        &__title{
+            width: 280px;
+            font-size: 27px;
+            margin: 0 auto;
+        }
+        
+        &__content {
+            width: 100%;
+            display: block;
+            
+        }
+
+        &__number{
+            font-size: 46px;
+            width: 54px;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+
+        &__text{
+            font-size: 15px;
+            width: unset;
+        }
+
+        &__item{
+            width: unset;
+            margin-top: 10px;
+            &:last-child{
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .about-company{
+        padding-left: $mobilePadding;
+        padding-right: $mobilePadding;
+
+        &__container{
+            padding-bottom: 0;
+        }
+
+        &__title{
+            font-size: 45px;
+        }
+
+        &__info{
+            font-size: 19px;
+        }
+
+        &__img{
+            width: 100px;
+            height: 100px;
+            left: 190px;
+        }
+    }
+
+    .recommendations{
+        padding-left: $mobilePadding;
+        padding-right: $mobilePadding;
+
+        &__content{
+            display: block;
+        }
+
+        &__item{
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        &__item_text{
+            font-size: 13px;
+        }
+
+        &__media {
+            width: 279px;
+            height: 197px;
+            margin: 0 auto;
+        }
+
+        &__point {
+            width: 5px;
+            height: 5px;
+        }
+
+    }
+
+    .propositions{
+        
+        &__img{
+            height: 136px;
+        }
+
+        &__container{
+            padding-top: 30px;
+            display: block;
+        }
+
+        &__header{
+            padding-left: $mobilePadding;
+            padding-right: $mobilePadding;
+        }
+
+        &__main{
+            padding-left: $mobilePadding;
+            padding-right: $mobilePadding;
+        }
+
+        &__title{
+            font-size: 27px;
+        }
+
+        &__icon{
+            img{
+                width: 50px;
+            }
+        }
+
+        &__info{
+            font-size: 14px;
+        }
+    }
+
+    .contact{
+        padding: 30px $mobilePadding;
+        &__container{
+            flex-direction: column;
+        }
+
+        &__title{
+            font-size: 47px;
+        }
+
+        &__content{
+            margin-top: 10px;
+            flex-direction: column;
+        }
+
+        &__item{
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        &__icon{
+            margin-right: 23px;
+        }
+    }
+
+    .footer{
+        padding-left: $mobilePadding;
+        padding-right: $mobilePadding;
+
+        &__text{
+            font-size: 14px;
+        }
+    }
+}
